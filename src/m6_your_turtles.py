@@ -10,7 +10,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# DONE: 2.
 #   You should have RUN the  m5e_loopy_turtles  module and READ its code.
 #   (Do so now if you have not already done so.)
 #
@@ -30,23 +30,42 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ########################################################################
 import rosegraphics as rg
 
-#Turtle 1 Definition
-turt1 = rg.SimpleTurtle('turtle')
-thickness1 = 20
+window = rg.TurtleWindow()
+window.tracer(100)
 
+
+#Turtle 1 Definition
+turt1 = rg.SimpleTurtle()
+turt1.pen = rg.Pen('blue', 2)
 turt1.speed = 20
+
+
 #Turtle 2 Definition
 turt2 = rg.SimpleTurtle('turtle')
-turt2.pen = rg.Pen('red',10)
+turt2.pen = rg.Pen('red', 2)
 turt2.speed = 20
+
+
 #Turtle 1 Motion
-for k in range(20):
-    turt1.draw_circle(40-2*k)
+for k in range(300):
+    turt1.draw_circle(k)
     turt1.pen_up()
-    turt1.forward(10)
+    turt1.right(3.6)
+    turt1.forward(4)
     turt1.pen_down()
-    turt1.pen = rg.Pen('blue', thickness1)
-    thickness1 = thickness1/2
+
+
+#Turtle 2 Motion
+for k in range(300):
+    turt2.draw_square(k)
+    turt2.pen_up()
+    turt2.left(3.6)
+    turt2.backward(4)
+    turt2.pen_down()
+
+
+window.close_on_mouse_click()
+
 
 
 
