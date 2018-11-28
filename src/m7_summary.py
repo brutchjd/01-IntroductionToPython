@@ -11,7 +11,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 ########################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   Write code that accomplishes the following (and ONLY the following),
 #   in the order listed:
 #
@@ -43,3 +43,26 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #   As always, COMMIT-and-PUSH when you are done with this module.
 #
 ########################################################################
+import rosegraphics as rg
+
+blueTurt = rg.SimpleTurtle()
+blueTurt.pen = rg.Pen('blue', 5)
+
+blueTurt.left(90)
+blueTurt.forward(200)
+blueTurt.pen_up()
+blueTurt.go_to(rg.Point(100,-40))
+blueTurt.pen_down()
+blueTurt.pen = rg.Pen('green', 10)
+blueTurt.set_heading(270)
+blueTurt.forward(150)
+
+window = rg.TurtleWindow()
+window.close_on_mouse_click()
+
+
+
+
+
+
+
